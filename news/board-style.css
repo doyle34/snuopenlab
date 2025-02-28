@@ -1,0 +1,271 @@
+﻿@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans|Montserrat');
+
+* {
+	box-sizing:border-box;
+}
+body {
+	background-color:#f1f1f1;
+	font-family:'Montserrat', 'Nanum Gothic', sans-serif;
+	margin:0;
+}
+.inner {
+	width:1100px;
+	margin:auto;
+	padding:0 10px;
+}
+/* Navigation bar */
+.navbar {
+	overflow:hidden;
+	background-color:#000066;
+	font-weight:bold;
+	position:fixed;
+	top:0;
+	width:100%;
+}
+.navbar .logo {
+	float:left;
+	width:134px;
+	height:20px;
+	margin:13px 5px;
+}
+.navbar-right {
+	float:right;
+}
+.navbar > ul {
+	list-style-type:none;
+	width:1100px;
+	margin:0 auto;
+	padding:0;
+	overflow:hidden;
+	background-color:#000066;
+}
+li {
+	float:left;
+}
+li a, .dropbtn {
+	display:inline-block;
+	color:white;
+	font-size:14px;
+	text-align:center;
+	padding:15px 20px;
+	text-decoration:none;
+}
+li a:hover, .dropdown:hover .dropbtn {
+	background-color:#3569fd;
+	color:#00ffff;
+}
+.dropdown {
+	display:inline-block;
+}
+.dropdown-content {
+	display:none;
+	position:absolute;
+	background-color:#f9f9f9;
+	min-width:160px;
+	box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index:1;
+}
+.dropdown-content a {
+	color:#000066;
+	padding:12px 20px;
+	text-decoration:none;
+	display:block;
+	text-align:left;
+}
+.dropdown-content a:hover {
+	background-color:#f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+	display:block;
+}
+/* Column container */
+.row {
+	display:-ms-flexbox; /* IE10 */
+	display:flex;
+	-ms-flex-wrap:wrap; /* IE10 */
+	flex-wrap:wrap;
+}
+/* Sidebar/left column */
+.side {
+	-ms-flex:30%; /* IE10 */
+	flex:30%;
+	background-color:#f1f1f1;
+	padding:20px;
+}
+/* Main column */
+.main {
+	-ms-flex:70%; /* IE10 */
+	flex:70%;
+	background-color:white;
+	padding:20px;
+}
+/* Add padding BETWEEN each column */
+.row {
+	margin:10px -16px;
+}
+.row,
+.row > .column {
+	padding:8px;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+	float:left;
+	width:33.33%;
+	display:none; /* Hide all elements by default */
+}
+/* Clear floats after rows */
+.row:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+/* Content */
+.content {
+	background-color:#fff;
+	padding:10px;
+}
+/* The "show" class is added to the filtered elements */
+.show {
+	display:block;
+}
+/* Style the buttons */
+.btn {
+	border:none;
+	outline:none;
+	padding:12px 16px;
+	background-color:white;
+	cursor:pointer;
+}
+.btn:hover {
+	background-color:#ddd;
+}
+.btn.active {
+	background-color:#666;
+	color:white;
+}
+#myImg {
+	cursor:pointer;
+	transition:0.3s;
+}
+#myImg:hover {
+	opacity:0.7;
+}
+/* The Modal (background) */
+.modal {
+	display:none; /* Hidden by default */
+	position:fixed;
+	z-index:1; /* Sit on top */
+	padding-top:100px;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.9);
+}
+/* Modal Content (image) */
+.modal-content {
+	margin:auto;
+	display:block;
+	width:80%;
+	min-width:700px;
+}
+/* Caption of Modal Image */
+#caption {
+	margin:auto;
+	display:block;
+	width:80%;
+	min-width:700px;
+	text-align:center;
+	color:#ccc;
+	padding:10px 0;
+	height:150px;
+}
+/* Add Animation */
+.modal-content, #caption {
+	-webkit-animation-name:zoom;
+	-webkit-animation-duration:0.6s;
+	animation-name:zoom;
+	animation-duration:0.6s;
+}
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)}
+	to {-webkit-transform:scale(1)}
+}
+@keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+}
+/* The Close Button */
+.close {
+	position:absolute;
+	top:15px;
+	right:35px;
+	color:#f1f1f1;
+	font-size:40px;
+	font-weight:bold;
+	transition:0.3s;
+}
+.close:hover,
+.close:focus {
+	color:#bbb;
+	text-decoration:none;
+	cursor:pointer;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width:700px) {
+	.modal-content {
+		width:100%;
+	}
+}
+.footer {
+	padding:20px 50px;
+	text-align:left;
+	background:#2a3842;
+}
+.footer p {
+	width:1100px;
+	margin:0 auto;
+	font-size:12px;
+	color:#ccc;
+	line-height:20px;
+	padding:0 20px;
+}
+.line {
+	border:0.25px solid rgba(255,255,255,0.1);
+}
+
+@media screen and (max-width:700px) {
+	.row {
+		flex-direction:column;
+	}
+}
+@media screen and (max-width:400px) {
+	.navbar a {
+		float:none;
+		display:block;
+		text-align:left;
+	}
+	.navbar-right {
+		float:none;
+	}
+}
+.section {
+	padding:50px 0;
+}
+.section h1 {
+	font-family:"Trebuchet MS", sans-serif;
+	font-size:25px;
+	color:#5B86B0;
+	padding:0px 10px;
+	margin:30px 0;
+	border-left:7px solid #97deff;
+}
+.object {
+	color:#3569fd;
+}
+.clear {
+	clear:both;
+}

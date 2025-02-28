@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<title>Lab. News</title>
+</head>
+
+<body>
+<div class="inner">
+<!-- header -->
+
+</div>
+<!-- navigator -->
+<div class="navbar">	
+<ul>
+	<div><a href="../index-new.html"><img src="../images/navlogo.png" class="logo" /></a></div>
+	<div class="navbar-right">	
+		<li class="dropdown"><a href="../introduction/introduction-new.html" class="dropbtn">Introduction</a>
+			<div class="dropdown-content">
+				<a href="about.htm">About Us</a>
+				<a href="location.htm">Location</a>
+				<a href="equip.htm">Equipment</a>
+				<a href="sw.htm">Software</a>
+			</div>
+		</li>
+		<li class="dropdown"><a href="../members/members-new.html" class="dropbtn">Members</a>
+			<div class="dropdown-content">
+				<a href="../members/prof.htm">Professor</a>
+				<a href="../members/pd.htm">Post Doctor</a>
+				<a href="../members/re.htm">Research Engineer</a>
+				<a href="../members/phd.htm">Ph.D. Candidates</a>
+				<a href="../members/msc.htm">M.Sc. Candidates</a>
+				<a href="../members/alum.htm">Alumni</a>
+			</div>
+		</li>
+		<li><a href="researches/researches-new.html">Researches</a></li>
+		<li class="dropdown"><a href="../projects/projects-new.html" class="dropbtn">Projects</a>
+			<div class="dropdown-content">
+				<a href="ongoing.htm">Ongoing</a>
+				<a href="finished.htm">Finished</a>
+			</div>
+		</li>
+		<li><a href="../publications/publications-new.html">Publications</a></li>
+		<li><a href="../lectures/lectures-new.html">Lectures</a></li>
+		<li><a href="../links/links.html">Links</a></li>
+		<li><a href="../news/news.html">Lab. News</a></li>
+		</div>
+	</ul>
+</div>
+<!-- main content -->
+<div class="inner">
+<table id="table_id" class="display">
+ <thead>
+ 	<tr>
+ 		<th>Column 1</th>
+ 		<th>Column 2</th>
+ 	</tr>
+ </thead>
+ <tbody>
+ 	<tr>
+ 		<td>Row 1 Data 1</td>
+ 		<td>Row 1 Data 2</td>
+ 	</tr>
+ 	<tr>
+ 		<td>Row 2 Data 1</td>
+ 		<td>Row 2 Data 2</td>
+ 	</tr>
+ </tbody>
+</table>
+</div>
+
+<script tyep="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js">	
+	var $ = require( 'jquery' );
+	var dt = require( 'datatables.net' )();
+	
+	$(document).ready( function () {
+		$('#table_id').dataTable()
+	});
+</script>
+<!-- footer -->
+<div class="footer">  
+	<p>열린구조연구실</p><br/>
+	<p>서울 관악구 관악로 1 서울대학교 조선해양공학과 41동<br/>TEL. 02-880-7336</p><br/>
+	<p class="line"></p><br/>
+	<p>Copyright &copy; 열린구조연구실 &nbsp; All Rights Reserved.</p>
+</div>
+	
+</body>
+
+</html>

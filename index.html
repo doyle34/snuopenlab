@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" type="text/css" media="screen" href="index-style.css"/>
+<title>서울대학교 열린구조연구실 - SNU Open Interactive Structural Lab.</title>
+</head>
+
+<body>
+<div class="inner">
+<!-- header -->
+<div class="header">
+	<a href="index.html"><img src="images/snulogo.jpg" class="logo1" alt="SNU Logo"/><img src="images/logo.gif" class="logo2" alt="OPINS Lab"/><img src="images/name.gif" class="logo3" alt="OPINS Lab"/></a>
+</div>
+</div>
+<!-- navigator -->
+<div class="navbar">
+	<ul>
+		<li><a href="news/news.html">LAB. NEWS</a></li>
+		<li><a href="links/links.html">LINKS</a></li>
+		<li><a href="lectures/lectures.html">LECTURES</a></li>
+		<li><a href="publications/publications.html">PUBLICATIONS</a></li>
+		<li><a href="projects/projects.html">PROJECTS</a></li>
+		<li><a href="researches/researches.html">RESEARCHES</a></li>
+		<li><a href="members/members.html">MEMBERS</a></li>
+		<li><a href="introduction/introduction.html">INTRODUCTION</a></li>				
+	</ul>
+</div>
+<!-- main content -->
+<div class="inner">
+<div class="row">
+	<div class="left">
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<img src="images/main1.jpg" class="left-img" alt="main1"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main2.png" class="left-img" alt="main2"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main3.png" class="left-img" alt="main3"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main4.jpg" class="left-img" alt="main4"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main5.png" class="left-img" alt="main5"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main6.jpg" class="left-img" alt="main6"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main7.png" class="left-img" alt="main7"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main8.jpg" class="left-img" alt="main8"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main9.jpg" class="left-img" alt="main9"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main10.png" class="left-img" alt="main10"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main11.jpg" class="left-img" alt="main11"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main12.jpg" class="left-img" alt="main12"/>
+			</div>
+			<div class="mySlides fade">
+				<img src="images/main13.jpg" class="left-img" alt="main13"/>
+			</div>
+		</div>
+		<div style="text-align:center" class="clear">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+		<br/>
+	</div>
+	<div class="right">
+		<h1>OPINS NEWS</h1>		
+		<p><span class="news">MARSTRUCT 2023</span><br/>9th International Conference on Marine Structures<br/>3–5 April 2023, Gothenburg, Sweden</p>
+		<p><span class="news">2023년도 한국해양과학기술협의회 공동학술대회</span><br/>3-4 May 2023, 부산 BEXCO</p>
+		<p><span class="news">OMAE 2023</span><br/>42nd International Conference on Ocean, Offshore and Arctic Engineering<br/>11-16 June 2023, Melbourne, Australia</p>
+		<p><span class="news">ISOPE 2023</span><br/>33rd International Ocean and Polar Engineering Conference<br/>19-23 June 2023, Ottawa, Canada</p>
+		<p><span class="news">PAAMES/AMEC 2023</span><br/>10th Advanced Maritime Engineering Conference<br/>18-20 October 2023, Kyoto, Japan</p>
+		<a class="btn" href="links/links.html">READ MORE &gt;&gt;</a>
+	</div>
+</div>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none"; 
+	}
+	slideIndex++;
+	if (slideIndex > slides.length) {slideIndex = 1}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace("active", "");
+	}
+	slides[slideIndex-1].style.display = "block"; 
+	dots[slideIndex-1].className += " active";
+	setTimeout(showSlides, 2500); // Change image every 2.5 seconds
+}
+</script>
+<!-- footer -->
+<div class="footer">
+	<p>조선해양공학과 열린구조연구실</p><br/>
+	<p>08826 서울시 관악구 관악로 1 서울대학교 공과대학 41동<br/>TEL 02-880-7336</p><br/>
+	<p>Copyright &copy; Open Interactive Structural Laboratory. All Rights Reserved.</p>
+</div>
+	
+</body>
+
+</html>

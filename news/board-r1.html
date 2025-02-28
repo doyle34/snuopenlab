@@ -1,0 +1,993 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>서울대학교 해양유체역학연구실 - Photo album</title>
+<meta name="description" content="서울대학교 해양유체역학연구실 - Photo album">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link rel="stylesheet" type="text/css" charset="utf-8"
+    href="/css/sub.css.php" />
+
+    
+	<script language="javascript" src="/script/common.js"></script>
+    <script language="javascript" src="/script/cishop.js"></script>
+	<script type="text/javascript" src="/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/script/jquery.datepick.js"></script>
+	<script type="text/javascript" src="/script/jquery.datepick-ko.js"></script>	
+	<link rel="stylesheet" type="text/css" href="/css/datepick/jquery.datepick.css"/>
+
+<script type="text/javascript">
+	function showMenu(idx, imgPath ,obj)
+	{		$('.sub_menu_1').css("display", "none");
+		$('.sub_menu_2').css("display", "none");
+		$('.sub_menu_3').css("display", "none");
+		$('.sub_menu_4').css("display", "none");
+		$('.sub_menu_5').css("display", "none");
+		$('.sub_menu_6').css("display", "none");
+		$('.sub_menu_7').css("display", "none");
+		$('.sub_menu_8').css("display", "none");
+		$('.sub_menu_' + idx).css("display", "block");
+		if(imgPath != '')
+		{
+			obj.src = imgPath;
+		}
+	}
+
+	function hideMenu(idx)
+	{
+		$('.sub_menu_' + idx).css("display", "none");
+	}
+	function showMenuAll()
+	{
+		$('#sub_menu_all').css("display", "block");
+	}
+	function hideMenuAll()
+	{
+		$('#sub_menu_all').css("display", "none");
+	}
+
+	function dropdownStatus(status)
+	{
+		if(status == "show")
+			$('#drop_down_menu').css("display", "block");
+		else
+			$('#drop_down_menu').css("display", "none");
+	}
+
+	function showIcon(status, idx, subIdx)
+	{
+		if(status == "show")            
+			$('.icon_' + idx + "_" + subIdx).attr("src" , "/include/snu_mhl/images/icon/icon_1.png");
+		else
+			$('.icon_' + idx + "_" + subIdx).attr("src" , "/include/snu_mhl/images/icon/icon_4.png");
+	}
+	function GetCookie (name)
+	{
+		var arg = name + "=";
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+
+		while (i < clen)
+		{
+			var j = i + alen;
+
+			if (document.cookie.substring(i, j) == arg)
+            	  {
+            	  	if(document.cookie.substring(j,1) != "")
+            	  	{
+            	    	return true;
+            	    }
+            	  }
+            	  
+            	  i = document.cookie.indexOf(" ", i) + 1;
+            	  
+            	  if (i == 0)
+            	  {
+            	  	break;
+            	  }
+            	}
+            	return null;
+            }
+            
+ function getReady() 
+ 		{ 
+ 	alert("준비중입니다.");
+ } 
+ $(document).ready(function(){
+ var $doc           = $(document);
+ var position       = 0;
+ var top = $doc.scrollTop(); //현재 스크롤바 위치
+ var screenSize     = 0;        // 화면크기
+ var halfScreenSize = 0;    // 화면의 반
+ //사용자 설정 값 시작 
+ var pageWidth      = 1000; // 페이지 폭, 단위:px
+ var leftOffet      = 25;  // 중앙에서의 폭(왼쪽 -, 오른쪽 +), 단위:px       => 다이씨!!! 왼쪽 위치 지정
+ var leftMargin     = pageWidth + leftOffet; // 페이지 폭보다 화면이 작을때 옵셋, 단위:px, leftOffet과 pageWidth의 반만큼 차이가 난다.
+ var speed          = 1000;     // 따라다닐 속도 : "slow", "normal", or "fast" or numeric(단위:msec)
+ var easing         = 'swing'; // 따라다니는 방법 기본 두가지 linear, swing
+ var $layer         = $('#scroll_banner'); // 레이어 셀렉팅
+ var layerTopOffset = 120;   // 레이어 높이 상한선, 단위:px
+ $layer.css('z-index', 10);   // 레이어 z-인덱스
+ //사용자 설정 값 끝 
+ //좌우 값을 설정하기 위한 함수
+ function resetXPosition()
+ {
+      $screenSize = $('body').width();// 화면크기
+      halfBlankSize = ($screenSize - pageWidth) / 2;// 화면의 반
+     xPosition = leftOffet;
+     if ($screenSize < pageWidth)
+         xPosition = leftMargin;
+     $layer.css('left', xPosition);
+ }
+ // 스크롤 바를 내린 상태에서 리프레시 했을 경우를 위해
+ if (top > 0 )
+     $doc.scrollTop(layerTopOffset+top);
+ else
+     $doc.scrollTop(0);
+ // 최초 레이어가 있을 자리 세팅
+ $layer.css('top',layerTopOffset);
+ resetXPosition();
+ //윈도우 크기 변경 이벤트가 발생하면
+ $(window).resize(resetXPosition);
+ //스크롤이벤트가 발생하면
+ $(window).scroll(function(){
+ yPosition = $doc.scrollTop()+layerTopOffset;
+ parent_height = $layer.parent().height();
+ layer_height = $layer.height();
+ if(yPosition > parent_height - layer_height)
+     yPosition = parent_height - layer_height;
+ $layer.animate({"top":yPosition }, {duration:speed, easing:easing, queue:false});
+ });
+ });
+          </script>            <script type="text/javascript">
+            function showSnb(idx)
+        	{
+        	        var list_order1 = 7;
+        	        var cnt_order1 = 0;
+        		
+        		for(i=1; i<=cnt_order1; i++)
+        		{
+        		        $('.snb_menu'+list_order1+'_'+i).css("display", "none");
+        		        //$('.snb_menu'+list_order1+'_'+i).slideUp("fast");
+        		}
+        		
+        		$('.snb_menu'+list_order1+'_'+idx).css("display", "block");
+        		//$('.snb_menu'+list_order1+'_'+idx).slideToggle(1);
+        		//$('.snb_menu'+list_order1+'_'+idx).slideToggle("fast");
+        	}
+        	
+                $(function() {
+					$('#submenu07').css("display", "block");                
+                });
+        </script>
+
+<script type="text/javascript">
+            var menu_status = '';
+        	
+        	function check_menu_onmouse(class_name)
+        	{
+        	    $("." + class_name).mouseover(function() {
+        	        menu_status = 'on';
+        	    });
+        	    
+        	    $("." + class_name).mouseout(function() {
+        	        menu_status = 'out';
+        	    });
+        	}
+        	
+        	function remove_selector(class_name, selector_order, css_str)
+        	{
+        	    selector_child = $('.' + class_name).children();
+        	    child_loop = selector_child.first();
+        	    
+        	    for(i=0; i<selector_child.length; i++)
+        	    {
+        	        if(i+1 == selector_order)
+        	            child_loop.css("display", "none");
+        	        else
+        	            child_loop.css("display", css_str);
+        	        
+        	        child_loop = child_loop.next();
+        	    }
+        	}
+        	function snb_2_3_all(class_name, block_class, order)
+        	{
+        	    children = $('.'+class_name).children();
+        	    
+        	    child_loop = children.first();
+        	    
+        	    for(i=0; i<children.length; i++)
+        	    {
+        	        menu_img = child_loop.children().children().first();
+        	        menu_img_dom = menu_img[0];
+        	        
+        	        function_str = 'var over_str = function onmouseover() { ';
+        	        function_str += "display_block_selector('" + block_class;
+        	        function_str += order + "_" + (i+1) + "'); }";
+        	        eval(function_str);
+        	        menu_img_dom.onmouseover = over_str
+        	        
+        	        child_loop = child_loop.next();
+        	    }
+        	}
+        	function snb_1_2_all(class_name, block_class, order)
+        	{
+        	    children = $('.'+class_name).children();
+        	    
+        	    child_loop = children.first();
+        	    
+        	    for(i=0; i<children.length; i++)
+        	    {
+        	        menu_img = child_loop.children().children().first();
+        	        menu_img_dom = menu_img[0];
+        	        
+        	        str = menu_img_dom.onmouseover;
+        	        str = str + '';
+        	        str = str.replace('function onmouseover()', '');
+        	        str = str.replace('{', '');
+        	        str = str.replace('}', '');
+        	        
+        	        function_str = 'var over_str = function onmouseover() { ';
+        	        function_str += "display_block_selector('" + block_class;
+        	        function_str += (i+1) + "'); ";
+        	        function_str += str;
+        	        function_str += " } ";
+        	        eval(function_str);
+        	        
+        	        menu_img_dom.onmouseover = over_str
+        	        
+        	        child_loop = child_loop.next();
+        	    }
+        	}
+</script>
+
+</head>
+
+<script type="text/javascript">
+    function second_list_sub_open(obj)
+    {
+        if($(obj).hasClass("on"))
+        {
+            $(obj).removeClass("on");
+            $('.second_list_sub_1').slideUp("slow");
+        }
+        else
+        {
+            $(obj).addClass("on");
+            $('.second_list_sub_1').slideDown("slow");
+        }
+    }
+    function second_list_sub_open_2(obj)
+    {
+        if($(obj).hasClass("on"))
+        {
+            $(obj).removeClass("on");
+            $('.second_list_sub_2').slideUp("slow");
+        }
+        else
+        {
+            $(obj).addClass("on");
+            $('.second_list_sub_2').slideDown("slow");
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function search_kwd(form)
+    {
+	    newWin = window.open("about:blank", "_frm", ""); 
+    	form.target = "_frm"; 
+    	form.submit();
+    }
+</script>
+
+<style>
+input:not([type='checkbox,radio']):focus::-webkit-input-placeholder {color: transparent;}
+</style>
+<!-- 전체 wrap -->
+<div class="wrap">
+	<!-- inner -->
+	<div class="inner">
+		<!-- header 시작 -->
+        <div class="header">
+            <h1 class="logo"><a href="/">서울대학교 해양유체역학연구소</a></h1>
+            <div class="search_wrap">
+				<form name="search_form" action="https://www.google.com/search"
+				onsubmit="search_kwd(this);">
+				    <input type="hidden" name="sitesearch" value="mhl.snu.ac.kr" />
+				<h2 class="blind">검색</h2>
+            	<div class="search">
+                	<label for="search" class="blind">검색</label>
+            		<input type="text" id="search" class="input_search" name="as_q" placeholder="검색어를 입력하세요." title="검색어를 입력하세요.">
+                </div>
+                <button class="btn_search">검색</button>
+				</form>
+            </div>
+            <!-- 주요메뉴 시작 -->
+            <div class="nav_wrap">
+                <h2 class="blind">주요메뉴</h2>
+                <ul class="nav">
+                <!-- menu 01 -->
+                <li><a href="/sub.php?code=R0BxPPRZ">introduction</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=x3b6TRNC">overview</a></li>
+                    <li><a href="/sub.php?code=E4773NES">contact us</a></li>
+                    </ul>
+                </li>
+                <!-- menu 02 -->
+                <li><a href="/sub.php?code=JTVNdB6V">people</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=0rMJABrW">Professor</a></li>
+                    <li><a href="/sub.php?code=VZS5KBFK">Research professor</a></li>
+                    <li><a href="/sub.php?code=invited">Invited professor</a></li>
+                    <li><a href="/sub.php?code=people&category=30">Lecturer</a></li>
+                    <li><a href="/sub.php?code=people&category=4">Post Doc. &amp; Researcher</a></li>
+                    <li><a href="/sub.php?code=people&category=5">Students</a></li>
+                    <li><a href="/sub.php?code=people&category=6">Staffs</a></li>
+                    <!--<li><a href="/sub.php?code=VKHBEEV">Photo album</a></li>-->
+                    </ul>
+                </li>
+				<!-- menu 07 -->
+                <li><a href="/sub.php?code=O56UYHJ3">EXPERIMENTAL FACILITY</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=KIO987RT">SLOSHING EXPERIMENT IN MHL</a></li>
+                    <li><a href="/sub.php?code=SW09IT8M" style="letter-spacing:-0.07em;">TOWING TANK EXPERIMENT IN SNU</a></li>
+                    </ul>
+                </li>
+                <!-- menu 03 -->
+                <li><a href="/sub.php?code=BKB8dHZT">research</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=82060VAR">Research interests</a></li>
+                    <li><a href="/sub.php?code=2bP6GdRB">Publications</a></li>
+                    <li><a href="/sub.php?code=7C772B0y">Collaborations</a></li>
+                    </ul>
+                </li>
+                <!-- menu 04 -->
+                <li><a href="/sub.php?code=325XuW9N">lecture</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=ZDE52EX5">2018 autumn</a></li>
+                    <li><a href="/sub.php?code=3xTbTE5">Previous lectures</a></li>
+                    </ul>
+                </li>
+                <!-- menu 05 -->
+                <li><a href="/sub.php?code=7T9ZVPxJ">news</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=WPGT35b7&category=1">News</a></li>
+                    <li><a href="/sub.php?code=WPGT35b7&category=2">Press materials</a></li>
+                    </ul>
+                </li>
+				<!-- menu 08 -->
+                <li><a href="/sub.php?code=VKHBEEV">PHOTO ALBUM</a>
+                    <ul class="sub_nav">
+                    <li><a href="/sub.php?code=VKHBEEV">PHOTO ALBUM</a></li>
+                    </ul>
+                </li>
+                <!-- menu 06 -->
+                <li><a href="/sub.php?code=4bKGSKG">link</a>
+					<ul class="sub_nav">
+                    <li><a href="/sub.php?code=4bKGSKG">link</a></li>
+                    </ul>
+				</li>        
+                </ul>
+            </div>
+            <!-- 주요메뉴 끝 -->
+        </div>
+        <!-- header 끝 -->
+        
+        <!-- sub 컨텐츠 영역 -->
+        <div class="s_container">
+			<div class="sub_top">
+			<ul class="location">
+        <li><!-- Ȩ������ -->
+                <!-- img src="images/sub/home_icon.gif"
+                style=" vertical-align:middle;" / -->
+                                                <a href="/">
+                                HOME</a></li>
+                                                <li> > </li><li>
+                                                <a href="/sub.php?code=VKHBEEV">
+                                Photo album</a></li>
+                </ul>
+			<p class="sub_tit"><!--Professor-->Photo album</p>
+			</div>
+			<div class="s_content">
+        			</div>
+			<h2 class="blind">콘텐츠영역</h2>
+           <script type="text/javascript">
+    var param_value = [];
+    var param_idx = 0;
+
+            param_value[param_idx] = [];
+            param_value[param_idx][0] = 'code';
+            param_value[param_idx++][1] = 'VKHBEEV';
+    function searchWord()
+    {
+        var form = document.boardForm;
+        var searchType = form.searchType.value;
+        var search = form.search.value;
+        
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&category=";
+        url += "&searchType=" + searchType;
+        url += "&search=" + search;
+        
+        window.open(url, "_self");   
+    }
+    
+    function arrange_where(searchType, search)
+    {
+        var form = document.boardForm;
+        var category = form.category.value;
+        
+        var url = "?";
+        url += "code=VKHBEEV"; 
+        url += "&searchType=" + searchType;
+        url += "&search=" + search;
+        url += "&category=" + category;
+        
+        window.open(url, "_self");   
+    }
+    
+    function arrange(orderType, orderBy)
+    {
+        var form = document.boardForm;
+        var searchType = form.searchType.value;
+        var search = form.search.value;
+        var category = form.category.value;
+        
+        var url = "?";
+        url += "code=VKHBEEV"; 
+        url += "&searchType=" + searchType;
+        url += "&search=" + search;
+        url += "&category=" + category;
+        url += "&orderType=" + orderType;
+        url += "&orderBy=" + orderBy;
+        url += "&page=1";
+        
+        window.open(url, "_self");   
+    }
+        
+    function insertData()
+    {
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&mode=write";
+        
+        for(i=0; i<param_value.length; i++)
+        {
+            param = param_value[i][0];
+            value = param_value[i][1];
+            
+            if(param != 'mode' && param != 'code')
+            {
+                url += '&' + param + '=' + value;
+            }
+        }
+        
+        window.open(url, "_self");                   
+    }
+    
+    function updateData(idx)
+    {
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&mode=modify";
+        url += "&board_num=" + idx;
+        
+        for(i=0; i<param_value.length; i++)
+        {
+            param = param_value[i][0];
+            value = param_value[i][1];
+            
+            if(param != 'mode' && param != 'board_num')
+            {
+                url += '&' + param + '=' + value;
+            }
+        }
+        
+        window.open(url, "_self");            
+    }
+    
+    function deleteData(idx)
+    {
+        if(confirm("데이터가 완전히 삭제됩니다.\n 삭제하시겠습니까?"))
+        {
+            var form = document.boardForm;
+            document.getElementById("actionType").value = "board_delete";
+            form.number.value = idx;
+            
+            form.submit();
+		}
+    }
+    
+    function viewData(idx)
+    {
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&mode=view";
+        url += "&board_num=" + idx;
+        
+        for(i=0; i<param_value.length; i++)
+        {
+            param = param_value[i][0];
+            value = param_value[i][1];
+            
+            if(param != 'mode' && param != 'board_num' && param != 'code')
+            {
+                url += '&' + param + '=' + value;
+            }
+        }
+        
+        window.open(url, "_self");                   
+    }
+    
+    function moveCategory(idx)
+    {
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&mode=list";
+        url += "&category=" + idx;
+        
+        window.open(url, "_self");                   
+    }
+    
+    function moveCategorySelect(idx)
+    {
+        var url = "?";
+        url += "code=VKHBEEV";
+        url += "&searchType=";
+        url += "&search=";
+        url += "&page=1";
+        url += "&mode=list";
+        url += "&category=" + idx;
+        
+        window.open(url, "_self");                   
+    }
+    
+    function directModify(idx, field_name, value)
+    {
+        form = document.boardForm;
+        form.actionType.value = "listpage_field_modify";
+        form.number.value = idx;
+        form.field_name.value = field_name;
+        form.field_value.value = value;
+        form.submit();
+    } 
+    
+    function change_category_css(obj, class_name)
+    {
+        obj.className = class_name;
+    }
+    
+    $(document).ready(function() {
+        $('#search').keyup(function(event){
+            if(event.keyCode == 13) {
+                searchWord();
+            }
+        });
+    });    
+    </script>        
+       <style type="text/css">
+/* 테이블 스타일 시작 */
+	/*어드민*/
+	.s_default_admin { /*padding:5px; margin-top:10px;*/ }
+	.s_default_admin img { vertical-align:-4px; }
+	.s_default_admin a{ color:red; }
+
+#boardSkin_s_default  {
+	width:px;
+	table-layout:fixed;
+    border-collapse: collapse;
+    font:normal 12px "나눔고딕", Dotum, "돋움", sans-serif;
+    margin: 0; padding: 0;
+	color:#000;
+	text-align:left;
+	
+}
+
+#boardSkin_s_default tbody td {
+    border-bottom: 1px solid #d1d1d1;
+	padding: 0.7em;
+    vertical-align: 4px;
+}
+
+#boardSkin_s_default th
+{   padding: 0.6em;
+	border-top: 2px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+    vertical-align: 4px;
+	height:20px;
+	}
+
+#boardSkin_s_default thead th,#boardSkin_s_default thead td,#boardSkin_s_default tfoot td {
+    background-color: #ffffff;
+    font-size: 1.1em;
+    vertical-align:middle;
+	 text-align:center;
+}
+
+
+#boardSkin_s_default tfoot td {
+    background-color: #FFF;
+    text-align:center;
+	padding:10px;
+}
+#boardSkin_s_default a { color:#000; text-decoration : none;}
+#boardSkin_s_default a:link { color:#000; text-decoration : none;}
+/*이미지*/
+
+
+/*마우스 온오버*/
+#boardSkin_s_default tbody th,#boardSkin_s_default td { background-color:#FFF; }
+#boardSkin_s_default tbody tr:hover td,#boardSkin_s_default tbody tr:hover th { background-color:#f7f7f7; }
+/* 테이블 스타일 끝 */
+
+.boardSkin_s_default_bottom {width:px;}
+/*버튼*/
+.boardSkin_s_default_bottom p { text-align:left;  }
+/*검색*/
+.boardSkin_s_default_bottom ul { width:px; background-color:#fff; padding:10px 0; margin-top:7px; text-align:right;}
+.boardSkin_s_default_bottom ul li {display: inline-block;line-height:22px;vertical-align:top;}
+.boardSkin_s_default_bottom ul li select {height:22px;}
+.boardSkin_s_default_bottom .btn {}
+</style>
+<!-- 머릿글 시작 -->
+<!-- 머릿글 끝 -->
+<!-- 전체테이블 시작 -->
+    <form name="boardForm" method="post" action="/board/process/action.php">        <input type="hidden" id="actionType" name="actionType" value="" />
+<input type="hidden" name="number" value="" />
+<input type="hidden" name="title_en" value="photo_album" />
+<input type="hidden" name="code" value="VKHBEEV" />
+<input type="hidden" name="replace_code" value="" />
+<input type="hidden" name="replace_page" value="" />
+<input type="hidden" name="page" value="1" />
+<input type="hidden" name="field_name" value="" />
+<input type="hidden" name="field_value" value="" />
+<input type="hidden" name="category" value="" />
+<!-- 관리 버튼 시작 -->
+<p class="s_default_admin"></a></p>
+<!-- 관리 버튼 끝 -->
+
+<!-- 카테고리 시작 -->
+<!---->
+
+
+
+
+
+
+
+<!-- div class="pt30"></div -->
+<div class="boardSkin_s_default_bottom">
+	
+	
+	<!-- 검색 시작 -->
+	<ul>
+		<li><select name="searchType"><option value="title"  >제목</option></select></li>
+		<li><input style="border:1px solid #c0c0c0; padding:2px; margin-top:0; height:16px; margin-left:5px" type="text" name="search" value=""/><input type="text" style="display:none;" /></li>
+		<li class="btn" ><span style="cursor:pointer;" onclick="javascript:searchWord();" ><img src="/board/boardSkin/s_notice_photo/images/btn/search_btn.gif"/></span></li>
+	</ul>    
+	<!-- 검색 끝 -->
+</div>	
+
+<!-- 카테고리 끝 -->
+<table id="boardSkin_s_default" border="0">
+        <colgroup align="center" >
+              <col width="100" /><col width="560" /><col width="160" /><col width="160" /><col width="160" />	   <thead>
+	    <tr>
+          
+
+	      <th scope="col"><img src="/board/boardSkin/s_notice_photo/images/board_no.gif" /></th>
+          
+
+	      <th scope="col"><img src="/board/boardSkin/s_notice_photo/images/board_title.gif" /></th>
+          
+
+	      <th scope="col"><img src="/board/boardSkin/s_notice_photo/images/board_user_name.gif" /></th>
+          
+
+	      <th scope="col"><img src="/board/boardSkin/s_notice_photo/images/board_date.gif" /></th>
+          
+
+	      <th scope="col"><img src="/board/boardSkin/s_notice_photo/images/board_hits.gif" /></th>
+	    </tr>
+	  </thead>
+	   </colgroup>      
+
+	  <tfoot>
+	    <tr>
+	      <td colspan="5"><a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=1"><img style="vertical-align:top;" src="/board/boardSkin/s_notice_photo/images/btn/first_btn_1.gif" /></a>&nbsp;<b><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #0CABAD;background:#00BCBE;color:#fff;">1</span></b>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=2"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">2</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=3"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">3</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=4"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">4</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=5"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">5</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=6"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">6</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=7"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">7</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=8"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">8</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=9"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">9</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=10"><span style="display:inline-block;width:20px;height:20px;line-height:20px;font-size:11px;border:1px solid #d9d9d9;background:#EFEFEF;color:#a0a0a0;">10</span></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=11"><img style="vertical-align:top;" src="/board/boardSkin/s_notice_photo/images/btn/next_btn_1.gif" /></a>&nbsp;<a href="/sub.php?code=VKHBEEV&mode=&category=&searchType=&search=&orderType=&orderBy=&page=31"><img style="vertical-align:top;" src="/board/boardSkin/s_notice_photo/images/btn/last_btn_1.gif" /></a></td>
+	    </tr>
+	  </tfoot>
+	  <tbody>
+	   
+	  <tr class="odd">
+            				<td align="center" >602</td>
+    	                        <td align="left" ><a href="" onclick="viewData('623'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >59</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >601</td>
+    	                        <td align="left" ><a href="" onclick="viewData('622'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >26</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >600</td>
+    	                        <td align="left" ><a href="" onclick="viewData('621'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >21</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >599</td>
+    	                        <td align="left" ><a href="" onclick="viewData('620'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >16</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >598</td>
+    	                        <td align="left" ><a href="" onclick="viewData('619'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >19</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >597</td>
+    	                        <td align="left" ><a href="" onclick="viewData('618'); return false;">2018 International Academic Research Exchange ...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-24</td>
+    	    				<td align="center" >23</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >596</td>
+    	                        <td align="left" ><a href="" onclick="viewData('617'); return false;">The 6th World Maritime Technology Conference (...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-10</td>
+    	    				<td align="center" >22</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >595</td>
+    	                        <td align="left" ><a href="" onclick="viewData('616'); return false;">The 6th World Maritime Technology Conference (...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-10</td>
+    	    				<td align="center" >17</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >594</td>
+    	                        <td align="left" ><a href="" onclick="viewData('615'); return false;">삼성중공업 최용호 박사님 세미나</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-12-10</td>
+    	    				<td align="center" >18</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >593</td>
+    	                        <td align="left" ><a href="" onclick="viewData('614'); return false;">2018 Annual Autumn Meeting of Japan Society of...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-29</td>
+    	    				<td align="center" >21</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >592</td>
+    	                        <td align="left" ><a href="" onclick="viewData('613'); return false;">2018 Annual Autumn Meeting of Japan Society of...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-29</td>
+    	    				<td align="center" >22</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >591</td>
+    	                        <td align="left" ><a href="" onclick="viewData('612'); return false;">2018 한국해양공학회 추계학술대회</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-19</td>
+    	    				<td align="center" >34</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >590</td>
+    	                        <td align="left" ><a href="" onclick="viewData('611'); return false;">2018 한국해양공학회 추계학술대회</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-19</td>
+    	    				<td align="center" >24</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >589</td>
+    	                        <td align="left" ><a href="" onclick="viewData('610'); return false;">2018 대한조선학회 추계학술대회</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-10</td>
+    	    				<td align="center" >32</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >588</td>
+    	                        <td align="left" ><a href="" onclick="viewData('609'); return false;">2018 대한조선학회 추계학술대회</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-10</td>
+    	    				<td align="center" >23</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >587</td>
+    	                        <td align="left" ><a href="" onclick="viewData('608'); return false;">2018 대한조선학회 추계학술대회</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-11-10</td>
+    	    				<td align="center" >30</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >586</td>
+    	                        <td align="left" ><a href="" onclick="viewData('607'); return false;">The 13th ISOPE Pacific-Aisa Offshore Mechanics...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-10-19</td>
+    	    				<td align="center" >50</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >585</td>
+    	                        <td align="left" ><a href="" onclick="viewData('606'); return false;">The 13th ISOPE Pacific-Aisa Offshore Mechanics...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-10-19</td>
+    	    				<td align="center" >32</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >584</td>
+    	                        <td align="left" ><a href="" onclick="viewData('605'); return false;">The 13th ISOPE Pacific-Aisa Offshore Mechanics...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-10-19</td>
+    	    				<td align="center" >30</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		   
+	  <tr class="odd">
+            				<td align="center" >583</td>
+    	                        <td align="left" ><a href="" onclick="viewData('604'); return false;">The 8th Pan Asian Association of Maritime Engi...</a></td>
+            				<td align="center" >관리자</td>
+    	    				<td align="center" >2018-10-17</td>
+    	    				<td align="center" >52</td>
+    	      
+	  </tr>
+      <!-- 각 라인 같은 효과를 주고 싶을 때 여기에 넣어 주세요 -->
+		              
+	  </tbody>
+	</table>
+<!-- 전체테이블 끝 -->   
+
+<!-- 글쓰기버튼  -->
+	<p></p>
+</form>
+			</div>
+			<!-- s_content -->
+		</div>
+        <!-- s_container 끝 -->
+    </div>
+    <!-- inner -->
+    
+    <div class="footer">
+		<div class="footer_in">
+			<p class="copyright">
+				Dept. of Naval Architecture and Ocean Engineering,Seoul National University, 1 Gwanak-ro, Gwanak-gu, Seoul, Korea<br>
+				Copyright reserved @ mhl.snu.ac.kr, Mail to foster@snu.ac.kr
+			</p>
+			<div class="family_link">
+				<h3>해양유체역학 연구실 협력 연구센터</h3>
+                <ul class="link_site">
+                    <li><a href="https://lretc.snu.ac.kr/" target="_blank" class="link_01"><span class="link_name">LRF기금 선박 유탄성<br/>연구센터</span></a></li>
+                    <li><a href="https://amec.snu.ac.kr/" target="_blank" class="link_02"><span class="link_name type_2">선박해양성능고도화<br/>연구사업단</span></a></li>
+                </ul>         	              
+            </div>
+		</div>
+    </div>      
+</div>
+<!-- 전체 wrap 끝 -->
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var i = 0;
+	var list_order_number = '7';
+	var sublist_order_number = '';
+	list_order_number = list_order_number - 0;
+	sublist_order_number = sublist_order_number - 0;
+    
+    $(".nav > li").each(function(){
+        if(++i == list_order_number)
+        {
+            $(this).children("a").next("ul").slideDown(350);
+            $(this).children("a").addClass("open");
+            $(this).children("a").addClass("on");
+            
+            var j = 0;
+            $(this).children("ul").children("li").each(function(){
+                if(++j == sublist_order_number)
+                {
+                    $(this).children("a").addClass("on");
+                }
+            });
+
+        }
+    });
+
+	$(".nav > li > a").on("click", function(e){
+		$(this).blur();
+    if($(this).parent().has("ul")) {
+      e.preventDefault();
+    }
+	if(!$(this).hasClass("open")) {
+      // hide any open menus and remove all other classes
+      $(".nav li ul").slideUp(350);
+      $(".nav li a").removeClass("open");
+      // open our new menu and add the open class
+      $(this).next("ul").slideDown(350);
+      $(this).addClass("open");
+      
+      $(".nav > li > a").removeClass("on");
+      $(this).addClass("on");
+    }
+    else if($(this).hasClass("open")) {
+      $(this).removeClass("open");
+      $(this).removeClass("on");
+      $(this).next("ul").slideUp(350);
+    }
+    
+  });
+});
+</script>
+
